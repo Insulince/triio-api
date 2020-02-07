@@ -1,0 +1,15 @@
+# github.com/dgrijalva/jwt-go v3.2.0+incompatible
+github.com/dgrijalva/jwt-go
+# github.com/gorilla/mux v1.7.3
+github.com/gorilla/mux
+# github.com/rs/cors v1.7.0
+github.com/rs/cors
+# golang.org/x/crypto v0.0.0-20200206161412-a0c6ece9d31a
+golang.org/x/crypto/bcrypt
+golang.org/x/crypto/blowfish
+# gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
+gopkg.in/mgo.v2
+gopkg.in/mgo.v2/bson
+gopkg.in/mgo.v2/internal/json
+gopkg.in/mgo.v2/internal/sasl
+gopkg.in/mgo.v2/internal/scram

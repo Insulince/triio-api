@@ -1,36 +1,42 @@
 package api
 
 import (
-	"github.com/Insulince/triio-api/pkg/models"
-	"net/http"
-	"golang.org/x/crypto/bcrypt"
-	"time"
-	"log"
-	"github.com/Insulince/triio-api/pkg/mongo"
 	"encoding/base64"
-	"strings"
-	"github.com/dgrijalva/jwt-go"
 	"encoding/json"
 	"github.com/Insulince/triio-api/pkg/configuration"
+	"github.com/Insulince/triio-api/pkg/models"
+	"github.com/Insulince/triio-api/pkg/mongo"
+	"github.com/dgrijalva/jwt-go"
+	"golang.org/x/crypto/bcrypt"
+	"log"
+	"net/http"
+	"strings"
+	"time"
 )
 
-func Home(w http.ResponseWriter, r *http.Request) () {
+func Home(w http.ResponseWriter, r *http.Request) {
 	_, aw := models.NewApiCommunication(r, w)
-	aw.Respond(struct{ Message string `json:"message"` }{Message: "Welcome!"}, http.StatusOK)
+	aw.Respond(struct {
+		Message string `json:"message"`
+	}{Message: "Welcome!"}, http.StatusOK)
 }
 
-func HealthCheck(w http.ResponseWriter, r *http.Request) () {
+func HealthCheck(w http.ResponseWriter, r *http.Request) {
 	_, aw := models.NewApiCommunication(r, w)
-	aw.Respond(struct{ Message string `json:"message"` }{Message: "OK"}, http.StatusOK)
+	aw.Respond(struct {
+		Message string `json:"message"`
+	}{Message: "OK"}, http.StatusOK)
 }
 
-func NotFound(w http.ResponseWriter, r *http.Request) () {
+func NotFound(w http.ResponseWriter, r *http.Request) {
 	_, aw := models.NewApiCommunication(r, w)
-	aw.Respond(struct{ Message string `json:"message"` }{Message: "Unsupported URL provided."}, http.StatusNotFound)
+	aw.Respond(struct {
+		Message string `json:"message"`
+	}{Message: "Unsupported URL provided."}, http.StatusNotFound)
 }
 
-func Register(config *configuration.Config) (func(w http.ResponseWriter, r *http.Request) ()) {
-	return func(w http.ResponseWriter, r *http.Request) () {
+func Register(config *configuration.Config) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 		ar, aw := models.NewApiCommunication(r, w)
 
 		type PostBody struct {
@@ -95,8 +101,8 @@ func Register(config *configuration.Config) (func(w http.ResponseWriter, r *http
 	}
 }
 
-func Login(config *configuration.Config) (func(w http.ResponseWriter, r *http.Request) ()) {
-	return func(w http.ResponseWriter, r *http.Request) () {
+func Login(config *configuration.Config) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 		ar, aw := models.NewApiCommunication(r, w)
 
 		type Response struct {

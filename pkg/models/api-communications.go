@@ -1,12 +1,12 @@
 package models
 
 import (
-	"net/http"
-	"log"
+	"encoding/json"
+	"errors"
 	"github.com/gorilla/mux"
 	"io/ioutil"
-	"errors"
-	"encoding/json"
+	"log"
+	"net/http"
 	"strconv"
 )
 
@@ -54,7 +54,7 @@ func NewApiResponseWriter(w http.ResponseWriter, r *http.Request) (aw *ApiRespon
 	return aw
 }
 
-func (aw *ApiResponseWriter) Respond(response interface{}, responseStatus int) () {
+func (aw *ApiResponseWriter) Respond(response interface{}, responseStatus int) {
 	aw.ResponseWriter.Header().Set("Content-Type", "application/json")
 
 	responseBody, err := json.Marshal(response)

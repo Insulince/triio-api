@@ -1,9 +1,9 @@
 package mongo
 
 import (
-	"gopkg.in/mgo.v2"
 	"github.com/Insulince/triio-api/pkg/configuration"
 	"github.com/Insulince/triio-api/pkg/models"
+	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"log"
 )

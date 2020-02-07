@@ -1,4 +1,4 @@
-module github.com/Insulince/github.com/Insulince/triio-api
+module github.com/Insulince/triio-api
 
 go 1.13
 

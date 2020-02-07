@@ -1,12 +1,12 @@
 package configuration
 
 import (
-	"os"
-	"strings"
-	"strconv"
-	"log"
 	"errors"
 	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"strings"
 )
 
 type Config struct {

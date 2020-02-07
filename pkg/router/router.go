@@ -1,10 +1,10 @@
 package router
 
 import (
-	"github.com/gorilla/mux"
-	"net/http"
 	"github.com/Insulince/triio-api/pkg/api"
 	"github.com/Insulince/triio-api/pkg/configuration"
+	"github.com/gorilla/mux"
+	"net/http"
 )
 
 type Router struct {
